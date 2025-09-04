@@ -61,6 +61,7 @@ p {
     p {
         font-size: 13px;
         margin-bottom: 22px;
+        font-variation-settings: 'wght' 440;
         color: hsl(0, 0%, 100%, .4);
 
     }
@@ -90,7 +91,7 @@ p {
         font-size: 12.5px;
         margin-bottom: 22px;
         color: hsl(0, 0%, 100%, .4);
-
+        font-variation-settings: 'wght' 440;
         max-width: 383px;
     }
 }
