@@ -4,6 +4,7 @@
         <script>try{if(localStorage.get("__framer_force_showing_editorbar_since")){const n=document.createElement("link");n.rel = "modulepreload";n.href="https://framer.com/edit/init.mjs";document.head.appendChild(n)}}catch(e){}</script>
         <link rel="stylesheet" href="./styles.css">
         <meta name="viewport" content="width=device-width">
+        
         <title>Get Early Access to Hypeify</title>
         <style data-framer-css-ssr-minified="" data-framer-components="framer-lib-cursors-host framer-gbv01 PropertyOverrides">
             #__framer-editorbar-button,
@@ -43,6 +44,39 @@
         
     </head>
 <body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".fade-words, .fade-para").forEach(el => {
+    const nodes = Array.from(el.childNodes);
+    let wordIndex = 0;
+
+    // base delay: 0s for h1, 3s for p
+    const baseDelay = el.classList.contains("fade-para") ? 0.3 : 0;
+
+    el.innerHTML = ""; 
+    nodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const words = node.textContent.split(/(\s+)/);
+        words.forEach(w => {
+          if (w.trim() === "") {
+            el.appendChild(document.createTextNode(w));
+          } else {
+            const span = document.createElement("span");
+            span.textContent = w;
+            span.style.animationDelay = (baseDelay + wordIndex * 0.1) + "s";
+            el.appendChild(span);
+            wordIndex++;
+          }
+        });
+      } else {
+        el.appendChild(node); // preserve <br> etc.
+      }
+    });
+  });
+});
+</script>
+
+
     
     <script async="" src="https://events.framer.com/script?v=2" data-fid="35e7404dd7b75fbd51c6f2da5276227bbe7d4bfcae2880f0c4012122036aee11" data-no-nt=""></script>
     <div id="main" data-framer-hydrate-v2="{&quot;routeId&quot;:&quot;ar8t8Udco&quot;,&quot;localeId&quot;:&quot;default&quot;,&quot;breakpoints&quot;:[{&quot;hash&quot;:&quot;pmg2x0&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 1200px)&quot;},{&quot;hash&quot;:&quot;19ifihh&quot;,&quot;mediaQuery&quot;:&quot;(min-width: 810px) and (max-width: 1199.98px)&quot;},{&quot;hash&quot;:&quot;1rdjywm&quot;,&quot;mediaQuery&quot;:&quot;(max-width: 809.98px)&quot;}]}" data-framer-ssr-released-at="2025-09-04T13:52:16.975Z" data-framer-page-optimized-at="2025-09-04T16:10:24.022Z" data-framer-generated-page=""><!--$--><style data-framer-html-style="">html body { background: rgb(10, 10, 10); }</style><div data-framer-root="" class="framer-gbv01 framer-pmg2x0" style="min-height:100vh;width:auto"><div class="framer-1cmfjo9-container"><!--$--><div></div><!--/$--></div><div class="framer-eu0l83" data-border="true" data-framer-name="Hero"><div class="framer-11253p8" data-framer-name="Background"><div class="framer-dw9aad" data-framer-name="FX"><div class="framer-hh1l9l-container" data-framer-appear-id="hh1l9l" data-framer-name="Gradient" name="Gradient" style="opacity: 1; transform: perspective(1200px); will-change: transform;"><!--$--><!--/$--><div class="ssr-variant hidden-1rdjywm hidden-pmg2x0"><div style="width: 100%; height: 100%; overflow: hidden; background-color: rgb(10, 10, 10); transform: translateZ(0px); border-radius: 0px; position: relative;"><div id="Tablet Gradients"><canvas data-generated="false" style="width: 100%; height: 100%; position: absolute; pointer-events: none;" width="1200" height="800"></canvas></div></div></div></div><div class="framer-xs0sb5" data-framer-name="Blur"></div><div class="framer-12gsl6o-container" data-framer-appear-id="12gsl6o" data-framer-name="Particles" name="Particles" style="opacity: 1; transform: perspective(1200px); will-change: transform;"><!--$--><!--/$--><div class="ssr-variant hidden-1rdjywm hidden-pmg2x0"><div style="width: 100%; height: 100%; overflow: hidden; background-color: rgba(0, 0, 0, 0); transform: translateZ(0px); border-radius: 0px; position: relative;"><div id="Tablet"><canvas data-generated="false" style="width: 100%; height: 100%; position: absolute; pointer-events: none;" width="1200" height="588"></canvas></div></div></div></div><div class="framer-1az1164" data-framer-name="Linear"></div></div><div class="framer-1liu9c4" data-framer-appear-id="1liu9c4" data-framer-name="Radial" style="opacity: 1; transform: perspective(1200px); will-change: transform;"></div><div class="framer-9dhxaz" data-framer-name="Elipse"></div><div class="framer-ct3gpt" data-framer-name="Base"></div><div class="framer-1f3m948" data-framer-name="Fade"><div class="framer-xfsdgu" data-framer-name="Left"></div><div class="framer-17qwwh1" data-framer-name="Right"></div></div></div></div></div><div id="overlay"></div><!--/$--></div><script>(()=>{function u(){function n(t,e,i){let r=document.createElement("a");r.href=t,r.target=i,r.rel=e,document.body.appendChild(r),r.click(),r.remove()}function o(t){if(this.dataset.hydrated){this.removeEventListener("click",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;if(/Mac|iPod|iPhone|iPad/u.test(navigator.userAgent)?t.metaKey:t.ctrlKey)return n(e,"","_blank");let r=this.getAttribute("rel")??"",c=this.getAttribute("target")??"";n(e,r,c)}function a(t){if(this.dataset.hydrated){this.removeEventListener("auxclick",o);return}t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");e&&n(e,"","_blank")}function s(t){if(this.dataset.hydrated){this.removeEventListener("keydown",s);return}if(t.key!=="Enter")return;t.preventDefault(),t.stopPropagation();let e=this.getAttribute("href");if(!e)return;let i=this.getAttribute("rel")??"",r=this.getAttribute("target")??"";n(e,i,r)}document.querySelectorAll("[data-nested-link]").forEach(t=>{t instanceof HTMLElement&&(t.addEventListener("click",o),t.addEventListener("auxclick",a),t.addEventListener("keydown",s))})}return u})()()</script><script>(()=>{function i(){for(let e of document.querySelectorAll("[data-framer-original-sizes]")){let t=e.getAttribute("data-framer-original-sizes");t===""?e.removeAttribute("sizes"):e.setAttribute("sizes",t),e.removeAttribute("data-framer-original-sizes")}}function a(){window.__framer_onRewriteBreakpoints=i}return a})()()</script>
@@ -56,8 +90,8 @@
     <link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/react.CwHTYZHY.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/rolldown-runtime.DXOHPd_4.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/framer.8WIQtm8e.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/motion.DAkmOHJP.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/-GxByLHfsYZZkOZb9wTAFAEDyF-NqpxB0FHcAF-vEps.Bz5DCdeN.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/shared-lib.nKp_hKoG.mjs"><link rel="modulepreload" fetchpriority="low" href="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/script_main.I8AO42-w.mjs"><script type="module" async="" data-framer-bundle="main" fetchpriority="low" src="https://framerusercontent.com/sites/7vlitVZORcwQEFiuxoM4ut/script_main.I8AO42-w.mjs"></script><div id="svg-templates" style="position: absolute; overflow: hidden; bottom: 0; left: 0; width: 0; height: 0; z-index: 0; contain: strict" aria-hidden="true">
 </div>
 <div class="container">
-    <h1>The Straight-forward <br class="no-mob">Way To Manage Your Sites</h1>
-    <p>Secure your spot to host, monitor, and optimise every project from  <br class="no-mob">one clean dashboard, built for speed, security, and growth</p>
+    <h1 class="fade-words">The Straight-forward <br class="no-mob">Way To Manage Your Sites</h1>
+    <p class="fade-para">Secure your spot to host, monitor, and optimise every project from  <br class="no-mob">one clean dashboard, built for speed, security, and growth</p>
     <form>
         <input type="text" placeholder="Enter your email">
         <button>Join Waiting List</button>
