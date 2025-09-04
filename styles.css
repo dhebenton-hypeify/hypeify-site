@@ -159,7 +159,7 @@ button:hover {
     }
 
     .container {
-        margin-bottom: 10%;
+        margin-bottom: 3%;
         padding: 20px;
     }
 
@@ -176,7 +176,7 @@ button:hover {
     }
 
     form {
-        margin: 13px 0 10px 0 ;
+        margin: 14px 0 12px 0 ;
         max-width: 359px;
     }
 
@@ -202,6 +202,11 @@ button:hover {
         padding: 0 8px;
         font-size: 12px;
     }
+    
+    .bottom-messa {
+        font-size: 10px;
+    }
+
 }
 
 @media (max-width: 391px) {
