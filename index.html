@@ -4,7 +4,7 @@
         <script>try{if(localStorage.get("__framer_force_showing_editorbar_since")){const n=document.createElement("link");n.rel = "modulepreload";n.href="https://framer.com/edit/init.mjs";document.head.appendChild(n)}}catch(e){}</script>
         <link rel="stylesheet" href="./styles.css">
         <meta name="viewport" content="width=device-width">
-        
+         <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
         <title>Get Early Access to Hypeify</title>
         <style data-framer-css-ssr-minified="" data-framer-components="framer-lib-cursors-host framer-gbv01 PropertyOverrides">
             #__framer-editorbar-button,
@@ -24,8 +24,6 @@
                 box-sizing:border-box;-webkit-font-smoothing:inherit
             }
 
-            
-            
             
             #__framer-badge-container {
                 pointer-events:none;
@@ -92,12 +90,90 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="container">
     <h1 class="fade-words">The Straight-forward <br class="no-mob">Way To Manage Your Sites</h1>
     <p class="fade-para">Secure your spot to host, monitor, and optimise every project from  <br class="no-mob">one clean dashboard, built for speed, security, and growth</p>
-    <form>
-        <input type="text" placeholder="Enter your email">
-        <button>Join Waiting List</button>
+    <form id="waitlist-form">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <button type="submit">Join Waiting List</button>
     </form>
     <p class="bottom-messa">By joining the waitlist, you agree to receive updates. You can unsubscribe anytime</p>
+    <div class="message-wrap">
+        <div id="message" class="message">
+            <p class="heading"></p>
+            <p class="subheading"></p>
+            </div>
+    </div>
 </div>
+<!-- Supabase -->
+<script src="https://unpkg.com/@supabase/supabase-js"></script>
+<script>
+  // Initialize Supabase client
+  const client = supabase.createClient(
+    "https://ommbbnhzostnosfvgfjy.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tbWJibmh6b3N0bm9zZnZnZmp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzODgyMTgsImV4cCI6MjA3MTk2NDIxOH0.pLFNIoUEeMXVxDEAV2Bnd9Th81bUGIYCabLhb3ZxAJQ"
+  );
+
+  const form = document.getElementById("waitlist-form");
+  const message = document.getElementById("message");
+  const heading = message.querySelector(".heading");
+  const subheading = message.querySelector(".subheading");
+  const emailInput = document.getElementById("email");
+
+  // Confetti
+  function fireConfetti() {
+    confetti({
+      particleCount: 120,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+
+    // Reset state
+    heading.textContent = "";
+    subheading.textContent = "";
+    message.className = "message";
+    emailInput.removeAttribute("id");
+
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      heading.textContent = "That Doesn’t Look Like a Valid Email";
+      subheading.textContent =
+        "Double-check the format and try again—we’ll get you on the list.";
+      message.classList.add("incorrect", "show");
+      emailInput.id = "incorrect";
+      return;
+    }
+
+    // Insert email into Supabase
+    const { error } = await client.from("emails").insert([{ email }]);
+
+    if (error) {
+      if (error.code === "23505") {
+        heading.textContent = "You’re Already on the List";
+        subheading.textContent =
+          "Looks like you’ve signed up before. Sit tight—we’ll keep you updated.";
+      } else {
+        heading.textContent = "Something Went Wrong";
+        subheading.textContent = error.message;
+      }
+      message.classList.add("incorrect", "show");
+      emailInput.id = "incorrect";
+    } else {
+      heading.textContent = "Congratulations";
+      subheading.textContent =
+        "You’ve secured your spot and we’ll keep you updated as we launch";
+      message.classList.add("complete", "show");
+      form.reset();
+      fireConfetti();
+    }
+  });
+</script>
+
+<!-- Confetti script -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
 </body>
 </html
     

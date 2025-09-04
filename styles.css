@@ -111,6 +111,8 @@ button:hover {
   animation: fadeUp 0.55s ease forwards;
 }
 
+
+
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -144,6 +146,47 @@ button {
   animation-delay: 0s; /* base offset */
 }
 
+#message {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 0%, .5);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 100%, .05);
+    position: absolute;
+    bottom: -50%;
+    transform: translateY(calc(15svh + 20px))scale(90%) translateX(-50%);
+    width: 400px;
+    opacity: 0;
+    filter: blur(4px);
+    transition: all ease .4s;
+}
+
+.message.complete {
+    transform: translateY(15svh) scale(100%) translatex(-50%) !important;
+    opacity: 1 !important;
+    filter: blur(0px) !important;
+}
+
+
+
+.message-wrap {
+    position: relative;
+}
+
+.heading {
+    font-size: 14px;
+    color: white !important;
+    font-variation-settings: 'wght' 600;
+    text-align: left;
+}
+
+#message p {
+    font-size: 11px;
+    text-align: left;
+    color: hsl(0, 0%, 75%);
+}
 
 @media (max-width: 1223px) and (min-width: 767px) {
     h1 {
@@ -182,6 +225,8 @@ button {
         padding: 0 10px;
         font-size: 13px;
     }
+
+    
 
 
 }
@@ -245,6 +290,12 @@ button {
     
     .bottom-messa {
         font-size: 10px;
+    }
+
+    #message {
+        padding: 10px;
+        width: 90svw;
+        max-width: 370px;
     }
 
 }
