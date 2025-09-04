@@ -28,13 +28,22 @@
 }
 
 h1 {
-    font-size: 38px;
+    font-size: 36px;
     color: #FCFCFC;
     text-align: center;
-    font-variation-settings: 'wght' 730;
+    font-variation-settings: 'wght' 760;
     text-transform: uppercase;
     line-height: 1.4;
     margin-bottom: 8px;
+}
+
+p {
+    font-size: 15px;
+    font-variation-settings: 'wght' 400;
+    color: hsl(0, 0%, 100%, .3);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 
@@ -45,10 +54,16 @@ h1 {
 @media (max-width: 1123px) and (min-width: 767px) {
     h1 {
         font-size: 29px;
+        margin-bottom: 7px;
+
     }
 
+    p {
+        font-size: 13px;
+        margin-bottom: 22px;
+    }
 
-
+    
 }
 
 
@@ -56,8 +71,18 @@ h1 {
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 747px) {
     h1 {
-        font-size: 24px;
+        font-size: 23px;
+        max-width: 345px;
+    }
+
+    .no-mob {
+        display: none;
+    }
+    p {
+        font-size: 12px;
+        margin-bottom: 22px;
+        max-width: 371px;
     }
 }
