@@ -16,6 +16,216 @@
     <!-- End of headEnd -->
 </head>
 <body>
+    <style>
+        #__framer-editorbar-button,
+#__framer-editorbar-container,
+#__framer-editorbar-button,
+.framer-6jWyo.framer-n0ccwk.framer-v-n0ccwk.framer-bmpgw8.__framer-badge {
+    display: none !important;
+    opacity: 0 !important;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter-VariableFont_opsz\,wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+
+
+.container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.005em;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 38px;
+    color: #FCFCFC;
+    text-align: center;
+    font-variation-settings: 'wght' 740;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 15px;
+    font-variation-settings: 'wght' 900 !important;
+    color: hsl(0, 0%, 50%);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 480px;
+}
+
+input {
+    background-color: hsl(0, 0%, 100%, .04);
+    backdrop-filter: blur(2px);
+    height: 40px;
+    border-radius: 14px;
+    border: 1px solid hsl(0, 0%, 100%, .02);
+    flex: 1;
+    padding: 16px;
+    font-size: 14px;
+    font-variation-settings: 'wght' 500;
+    color: white;
+    transition: all .18s cubic-bezier(0.3, 0.9, 0.4, 1);
+    box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 29%), 
+}
+
+input:hover {
+    background-color: hsl(0, 0%, 100%, .1);
+    border: 1PX solid hsl(0, 0%, 100%, .1);
+}
+
+input:focus {
+    background-color: hsl(0, 0%, 100%, .1);
+    border: 1PX solid hsl(0, 0%, 100%, .3);
+    outline: none;
+}
+
+input::placeholder {
+    color: hsl(0, 0%, 100%, .2);
+}
+
+button {
+    background-color: hsl(212, 100%, 47%, .5);
+    box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 29%);
+    height: 38px;
+    border-radius: 10px;
+    padding: 0 14px;
+    color: hsl(0, 0%, 90%);
+    transition: all .18s cubic-bezier(0.3, 0.9, 0.4, 1);
+    border: 1px solid hsl(0, 0%, 100%, .1);
+    font-variation-settings: 'wght' 550;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: hsl(212, 100%, 47%);
+    border: 1px solid hsl(0, 0%, 100%, .2);
+    color: white;
+}
+
+
+
+
+
+@media (max-width: 1123px) and (min-width: 767px) {
+    h1 {
+        font-size: 29px;
+        margin-bottom: 4px;
+
+    }
+
+    p {
+        font-size: 13px;
+        margin-bottom: 20px;
+        font-variation-settings: 'wght' 440;
+        color: hsl(0, 0%, 100%, .4);
+
+    }
+
+    form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 424px;
+}
+
+input {
+    height: 36px;
+    padding: 14px;
+    font-size: 13px;
+}
+
+button {
+    height: 34px;
+    padding: 0 12px;
+    font-size: 13px;
+}
+
+    
+}
+
+
+
+
+
+
+@media (max-width: 747px) {
+    h1 {
+        font-size: 24px;
+        max-width: 355px;
+        margin-bottom: 8px;
+    }
+
+    .container {
+        padding: 12px;
+        padding-bottom: 50px;
+    }
+
+    .no-mob {
+        display: none;
+    }
+
+    p {
+        font-size: 12.5px;
+        margin-bottom: 22px;
+        color: hsl(0, 0%, 100%, .4);
+        font-variation-settings: 'wght' 440;
+        max-width: 383px;
+    }
+
+    form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    max-width: 380px;
+}
+
+input {
+    height: 35px;
+    padding: 14px;
+    font-size: 12px;
+}
+
+button {
+    height: 33px;
+    padding: 0 12px;
+    font-size: 12px;
+}
+}
+    </style>
     <script async="" src="https://events.framer.com/script?v=2" data-fid="35e7404dd7b75fbd51c6f2da5276227bbe7d4bfcae2880f0c4012122036aee11" data-no-nt=""></script>
     <div class="container">
         <h1>The Straight-forward <br class="no-mob">Way To Manage Your Sites</h1>
