@@ -12,4 +12,52 @@
     left: 0px;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+* {
+    font-family: "Inter", sans-serif;
+    letter-spacing: 0.005em;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 38px;
+    color: #FCFCFC;
+    text-align: center;
+    font-variation-settings: 'wght' 730;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+
+
+
+
+
+@media (max-width: 1123px) and (min-width: 767px) {
+    h1 {
+        font-size: 29px;
+    }
+
+
+
+}
+
+
+
+
+
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 24px;
+    }
 }
