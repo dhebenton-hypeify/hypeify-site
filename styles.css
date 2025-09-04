@@ -40,7 +40,7 @@ h1 {
 p {
     font-size: 15px;
     font-variation-settings: 'wght' 400;
-    color: hsl(0, 0%, 100%, .3);
+    color: hsl(0, 0%, 100%, .35);
     line-height: 1.6;
     margin-bottom: 24px;
     text-align: center;
@@ -54,15 +54,16 @@ p {
 @media (max-width: 1123px) and (min-width: 767px) {
     h1 {
         font-size: 29px;
-        margin-bottom: 7px;
+        margin-bottom: 4px;
 
     }
 
     p {
         font-size: 13px;
         margin-bottom: 22px;
-    }
+        color: hsl(0, 0%, 100%, .4);
 
+    }
     
 }
 
@@ -75,14 +76,21 @@ p {
     h1 {
         font-size: 23px;
         max-width: 345px;
+        margin-bottom: 6px;
+    }
+
+    .container {
+        padding: 12px;
     }
 
     .no-mob {
         display: none;
     }
     p {
-        font-size: 12px;
+        font-size: 12.5px;
         margin-bottom: 22px;
-        max-width: 371px;
+        color: hsl(0, 0%, 100%, .4);
+
+        max-width: 383px;
     }
 }
