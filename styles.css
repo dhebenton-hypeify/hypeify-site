@@ -188,6 +188,10 @@ button {
     color: hsl(0, 0%, 75%);
 }
 
+.mob-show {
+    display: none;
+}
+
 @media (max-width: 1223px) and (min-width: 767px) {
     h1 {
         font-size: 31px;
@@ -298,6 +302,10 @@ button {
         max-width: 370px;
     }
 
+    .mob-show {
+        display: block;
+    }
+
 }
 
 @media (max-width: 391px) {
@@ -310,5 +318,9 @@ button {
         flex-direction: column;
         gap: 6px;
         align-items: stretch;
+    }
+
+    .mob-show {
+        display: block;
     }
 }
