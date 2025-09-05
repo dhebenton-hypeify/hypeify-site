@@ -313,6 +313,10 @@ button {
         font-size: 18px;
         max-width: 273px;
     }
+
+    p {
+        font-size: 11px !important;
+    }
     
     form {
         flex-direction: column;
@@ -322,5 +326,13 @@ button {
 
     .mob-show {
         display: block !important;
+    }
+
+    input {
+        height: 32px;
+    }
+
+    button {
+        height: 28px;
     }
 }
