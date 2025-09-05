@@ -303,7 +303,7 @@ button {
     }
 
     .mob-show {
-        display: block;
+        display: block !important;
     }
 
 }
@@ -321,6 +321,6 @@ button {
     }
 
     .mob-show {
-        display: block;
+        display: block !important;
     }
 }
